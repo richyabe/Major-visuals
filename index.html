@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Major Visuals — Pro Visual Content Studio</title>
+    <meta name="description" content="Professional video editing, graphic design & motion graphics training. Get premium app access for ₦5,000. Created by Major Dunsin.">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="logo-animation">
+                <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="50" stroke="#FFD700" stroke-width="4" fill="none" />
+                    <path d="M60,10 A50,50 0 0,1 110,60 A50,50 0 0,1 60,110 A50,50 0 0,1 10,60 A50,50 0 0,1 60,10" stroke="#FFD700" stroke-width="4" fill="none" stroke-dasharray="314" stroke-dashoffset="314" />
+                </svg>
+            </div>
+            <h3>Loading Major Visuals...</h3>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><span class="gradient-text">MAJOR VISUALS</span></h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#courses" class="nav-link">Courses</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#apps" class="nav-link">Apps</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <canvas id="three-canvas" class="three-canvas"></canvas>
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="hero-title">
+                    <span id="typed-title"></span>
+                </h1>
+                <p class="hero-subtitle">
+                    Professional Video Editing, Graphic Design & Motion Graphics Training for Creators
+                </p>
+                <div class="hero-buttons">
+                    <a href="#courses" class="btn btn-primary">Explore Courses</a>
+                    <a href="#apps" class="btn btn-secondary">Get Apps</a>
+                </div>
+                <div class="scroll-indicator">
+                    <i class="fas fa-chevron-down"></i>
+                    <span>Scroll Down</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Professional visual content creation and training</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Editing</h3>
+                    <p>Professional video editing services and comprehensive courses for all skill levels.</p>
+                    <ul class="service-features">
+                        <li>✅ All editing apps covered</li>
+                        <li>✅ Pro version access included</li>
+                        <li>✅ Live app access</li>
+                        <li>✅ Step-by-step tutorials</li>
+                    </ul>
+                    <div class="service-badge">Best Seller</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Graphic Design</h3>
+                    <p>Professional design services and tutorials to enhance your creative skills.</p>
+                    <ul class="service-features">
+                        <li>✅ Professional design training</li>
+                        <li>✅ Tools & techniques</li>
+                        <li>✅ Portfolio development</li>
+                        <li>✅ Industry standards</li>
+                    </ul>
+                    <div class="service-badge">New</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>Motion Graphics</h3>
+                    <p>Learn animation and motion graphics to bring your content to life.</p>
+                    <ul class="service-features">
+                        <li>✅ Animation techniques</li>
+                        <li>✅ Motion design principles</li>
+                        <li>✅ Software training</li>
+                        <li>✅ Project-based learning</li>
+                    </ul>
+                    <div class="service-badge">Premium</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Editing Apps</h3>
+                    <p>Affordable access to premium editing apps and comprehensive usage tutorials.</p>
+                    <ul class="service-features">
+                        <li>✅ Multiple app access</li>
+                        <li>✅ Tutorial videos</li>
+                        <li>✅ Pro features unlocked</li>
+                        <li>✅ Android optimized</li>
+                    </ul>
+                    <div class="service-badge">Hot Deal</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section courses-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🎓 Premium Video Editing Courses</h2>
+                <p class="section-subtitle">Professional training for all levels - from beginner to expert</p>
+            </div>
+
+            <div class="courses-grid">
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1614963326505-843868e1d83a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470" alt="Video Editing Pro Course">
+                        <div class="course-price">₦5,000</div>
+                        <div class="course-badge">🔥 Best Seller</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Video Editing Pro</h3>
+                        <p>Master advanced video editing techniques, color grading, and professional workflows. Includes Pro version access.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 40 hours</span>
+                            <span><i class="fas fa-users"></i> 500+ students</span>
+                            <span><i class="fas fa-certificate"></i> Certificate</span>
+                        </div>
+                        <a href="https://wa.me/2349045962422?text=I+want+to+buy+Video+Editing+Pro+Course+for+₦5000" 
+                           class="btn btn-course" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Buy via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1684503830693-117be55da983?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=701" alt="Motion Graphics Course">
+                        <div class="course-price">₦5,000</div>
+                        <div class="course-badge">✨ New</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Motion Graphics</h3>
+                        <p>Learn animation, motion design, and visual effects. Perfect for content creators and designers.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 35 hours</span>
+                            <span><i class="fas fa-users"></i> 300+ students</span>
+                            <span><i class="fas fa-certificate"></i> Certificate</span>
+                        </div>
+                        <a href="https://wa.me/2349045962422?text=I+want+to+buy+Motion+Graphics+Course+for+₦5000" 
+                           class="btn btn-course" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Buy via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470" alt="Graphic Design Course">
+                        <div class="course-price">₦5,000</div>
+                        <div class="course-badge">💎 Premium</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>Graphic Design</h3>
+                        <p>Professional graphic design training with industry-standard tools and techniques.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 30 hours</span>
+                            <span><i class="fas fa-users"></i> 250+ students</span>
+                            <span><i class="fas fa-certificate"></i> Certificate</span>
+                        </div>
+                        <a href="https://wa.me/2349045962422?text=I+want+to+buy+Graphic+Design+Course+for+₦5000" 
+                           class="btn btn-course" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Buy via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://plus.unsplash.com/premium_photo-1679079455733-3f80a3b82f01?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=688" alt="CapCost Access Course">
+                        <div class="course-price">₦5,000</div>
+                        <div class="course-badge">🚀 Hot Deal</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>CapCost Pro Access</h3>
+                        <p>Get discounted Pro version access for CapCut and other editing apps. Android optimized.</p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> Instant Access</span>
+                            <span><i class="fas fa-mobile-alt"></i> Android Only</span>
+                            <span><i class="fas fa-infinity"></i> Lifetime</span>
+                        </div>
+                        <a href="https://wa.me/2349045962422?text=I+want+to+buy+CapCost+Pro+Access+for+₦5000" 
+                           class="btn btn-course" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Buy via WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apps Section -->
+    <section id="apps" class="section apps-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">📱 Premium Editing Apps Access</h2>
+                <p class="section-subtitle">Affordable access to Pro versions of popular editing apps</p>
+            </div>
+
+            <div class="apps-grid">
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>CapCut Pro</h3>
+                    <p class="app-description">No watermarks, all premium features, lifetime access</p>
+                    <div class="app-price">₦5,000</div>
+                    <div class="app-badge">🔥 Best Seller</div>
+                    <a href="https://wa.me/2349045962422?text=I+want+CapCut+Pro+Access+for+₦5000" 
+                       class="btn btn-app" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Get Access
+                    </a>
+                </div>
+
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>KineMaster Pro</h3>
+                    <p class="app-description">Professional video editing with advanced features</p>
+                    <div class="app-price">₦5,000</div>
+                    <div class="app-badge">✨ New</div>
+                    <a href="https://wa.me/2349045962422?text=I+want+KineMaster+Pro+Access+for+₦5000" 
+                       class="btn btn-app" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Get Access
+                    </a>
+                </div>
+
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Adobe Premiere Rush</h3>
+                    <p class="app-description">Professional video editing on mobile devices</p>
+                    <div class="app-price">₦5,000</div>
+                    <div class="app-badge">💎 Premium</div>
+                    <a href="https://wa.me/2349045962422?text=I+want+Adobe+Premiere+Rush+Access+for+₦5000" 
+                       class="btn btn-app" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Get Access
+                    </a>
+                </div>
+
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>VivaVideo Pro</h3>
+                    <p class="app-description">All premium features unlocked permanently</p>
+                    <div class="app-price">₦5,000</div>
+                    <div class="app-badge">🚀 Hot Deal</div>
+                    <a href="https://wa.me/2349045962422?text=I+want+VivaVideo+Pro+Access+for+₦5000" 
+                       class="btn btn-app" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Get Access
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Major Visuals?</h2>
+                <p class="section-subtitle">Professional training with affordable access</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Professional Training</h3>
+                    <p>Learn from industry professionals with years of experience in visual content creation.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Android Optimized</h3>
+                    <p>All courses and app access optimized for Android devices with live access.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Affordable Pricing</h3>
+                    <p>Get premium access at discounted prices - ₦5,000 for comprehensive packages.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certified Learning</h3>
+                    <p>Receive certificates upon course completion to boost your professional profile.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Support</h3>
+                    <p>Join our community of creators and get support through social media platforms.</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3>Lifetime Access</h3>
+                    <p>Get lifetime access to premium features and continuous updates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="reviews" class="section testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">⭐ What Our Students Say</h2>
+                <p class="section-subtitle">Real reviews from real creators</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The video editing course transformed my content. The CapCost access was worth every kobo! No more watermarks on my videos."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1723221907187-3e88c1d74b99?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687" alt="Tunde">
+                            <div>
+                                <h4>Tunde O.</h4>
+                                <span>Content Creator</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Professional service, comprehensive training. The motion graphics course helped me land a job at a creative agency!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1614023342667-6f060e9d1e04?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1471" alt="Chloe">
+                            <div>
+                                <h4>Chloe M.</h4>
+                                <span>Freelance Designer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Affordable access to premium apps. The tutorials are clear and easy to follow. Highly recommended for Android users!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1598803784715-34ae74c751a3?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687" alt="Emeka">
+                            <div>
+                                <h4>Emeka S.</h4>
+                                <span>Video Editor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">📞 Get In Touch</h2>
+                <p class="section-subtitle">Have questions? Contact us via WhatsApp</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>💬 Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>+234 904 596 2422</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-facebook"></i>
+                        <div>
+                            <h4>Facebook</h4>
+                            <p>David Oluwadunsin Ayodeji</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-telegram"></i>
+                        <div>
+                            <h4>Telegram</h4>
+                            <p>Major Visuals</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <div>
+                            <h4>Instagram</h4>
+                            <p>Major_Dunsin1</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-twitter"></i>
+                        <div>
+                            <h4>X (Twitter)</h4>
+                            <p>Major_Dunsin</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Major Visuals</h3>
+                    <p>Professional visual content creation and training for creators worldwide.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/DavidOluwadunsinAyodeji" class="social-link" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://t.me/majorvisuals" class="social-link" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a href="https://instagram.com/Major_Dunsin1" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/Major_Dunsin" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#apps">Apps</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#courses">Video Editing Courses</a></li>
+                        <li><a href="#services">Graphic Design</a></li>
+                        <li><a href="#services">Motion Graphics</a></li>
+                        <li><a href="#apps">App Access</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Major Visuals. Created by Major Dunsin. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/2349045962422" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
