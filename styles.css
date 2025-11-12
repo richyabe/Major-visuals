@@ -80,7 +80,7 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-/* Navigation */
+/* Navigation - FIXED RESPONSIVE VERSION WITH VISIBLE LINKS */
 .navbar {
     position: fixed;
     top: 0;
@@ -131,6 +131,7 @@ body {
     transition: all 0.3s ease;
     position: relative;
     padding: 0.5rem 0;
+    font-size: 1rem; /* Added font size */
 }
 
 .nav-link::after {
@@ -154,26 +155,39 @@ body {
     text-shadow: var(--glow);
 }
 
+/* HAMBURGER MENU - LIT ANIMATED VERSION */
 .hamburger {
-    display: none;
+    display: none; /* Hidden by default on desktop */
     flex-direction: column;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 1002; /* Above navbar */
+    position: relative;
+    width: 30px;
+    height: 21px;
+    padding: 5px;
+    /* Force visibility on mobile */
 }
 
 .bar {
-    width: 25px;
+    width: 100%;
     height: 3px;
-    background: var(--light);
+    background: #ffffff !important; /* White background - force visible */
     margin: 3px 0;
     transition: 0.3s;
     border-radius: 2px;
+    transform-origin: center;
+    /* Force visibility */
+    opacity: 1 !important;
+    display: block !important;
+    /* Add border to ensure visibility */
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
 }
 
-/* Hero Section */
+/* Hero Section - FIXED RESPONSIVE VERSION */
 .hero {
     position: relative;
     height: 100vh;
+    min-height: 600px; /* Minimum height for mobile */
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -195,6 +209,7 @@ body {
     text-align: center;
     color: var(--white);
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    padding: 0 20px; /* Added padding for mobile */
 }
 
 .hero-title {
@@ -207,6 +222,7 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: fadeInUp 1s ease-out;
+    line-height: 1.2; /* Better line height for mobile */
 }
 
 @keyframes fadeInUp {
@@ -226,6 +242,7 @@ body {
     opacity: 0.9;
     max-width: 800px;
     margin: 0 auto 2rem;
+    line-height: 1.6; /* Better line height for mobile */
 }
 
 .hero-buttons {
@@ -252,6 +269,7 @@ body {
     position: relative;
     overflow: hidden;
     z-index: 1;
+    min-width: 180px; /* Minimum width for mobile touch targets */
 }
 
 .btn::before {
@@ -309,6 +327,7 @@ body {
     color: var(--white);
     animation: bounce 2s infinite;
     cursor: pointer;
+    z-index: 3;
 }
 
 .scroll-indicator i {
@@ -373,7 +392,7 @@ body {
     opacity: 0.8;
 }
 
-/* Services Section */
+/* Services Section - LIT ANIMATED CARDS */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -392,13 +411,34 @@ body {
     overflow: hidden;
     opacity: 1; /* Always visible */
     transform: translateY(0); /* Always visible */
+    /* LIT ANIMATIONS */
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.service-card:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.service-card:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.service-card:nth-child(4) {
+    animation-delay: 3s;
 }
 
 .service-card:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-10px) scale(1.02) rotate(2deg);
     box-shadow: var(--hover-glow);
     background: rgba(124, 58, 237, 0.1);
     border: 1px solid rgba(124, 58, 237, 0.3);
+    animation: none; /* Stop floating animation on hover */
 }
 
 .service-icon {
@@ -406,10 +446,17 @@ body {
     color: var(--accent);
     margin-bottom: 1rem;
     transition: transform 0.3s ease;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 .service-card:hover .service-icon {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(10deg);
     color: var(--secondary);
 }
 
@@ -431,6 +478,21 @@ body {
     font-size: 0.9rem;
     position: relative;
     padding-left: 1.5rem;
+    animation: slideIn 0.3s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.service-features li:nth-child(1) { animation-delay: 0.1s; }
+.service-features li:nth-child(2) { animation-delay: 0.2s; }
+.service-features li:nth-child(3) { animation-delay: 0.3s; }
+.service-features li:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .service-features li::before {
@@ -453,9 +515,15 @@ body {
     font-weight: 600;
     z-index: 1;
     box-shadow: 0 0 10px rgba(5, 150, 105, 0.5);
+    animation: glow 2s infinite alternate;
 }
 
-/* Courses Section */
+@keyframes glow {
+    from { box-shadow: 0 0 10px rgba(5, 150, 105, 0.5); }
+    to { box-shadow: 0 0 20px rgba(5, 150, 105, 0.8); }
+}
+
+/* Courses Section - LIT ANIMATED CARDS */
 .courses-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -472,13 +540,32 @@ body {
     position: relative;
     opacity: 1; /* Always visible */
     transform: translateY(0); /* Always visible */
+    /* LIT ANIMATIONS */
+    animation: slideInUp 0.8s ease-out;
+}
+
+.course-card:nth-child(1) { animation-delay: 0.1s; }
+.course-card:nth-child(2) { animation-delay: 0.2s; }
+.course-card:nth-child(3) { animation-delay: 0.3s; }
+.course-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) rotate(5deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
 }
 
 .course-card:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-10px) scale(1.02) rotate(1deg);
     box-shadow: var(--hover-glow);
     background: rgba(124, 58, 237, 0.1);
     border: 1px solid rgba(124, 58, 237, 0.3);
+    animation: none; /* Stop initial animation on hover */
 }
 
 .course-image {
@@ -508,6 +595,12 @@ body {
     font-weight: 600;
     z-index: 1;
     box-shadow: 0 0 10px rgba(5, 150, 105, 0.5);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
 }
 
 .course-badge {
@@ -522,6 +615,12 @@ body {
     font-weight: 600;
     z-index: 1;
     box-shadow: 0 0 10px rgba(124, 58, 237, 0.5);
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .course-content {
@@ -554,6 +653,12 @@ body {
     color: var(--white);
     width: 100%;
     box-shadow: var(--glow);
+    animation: glowButton 3s infinite alternate;
+}
+
+@keyframes glowButton {
+    from { box-shadow: var(--glow); }
+    to { box-shadow: var(--hover-glow); }
 }
 
 .btn-course:hover {
@@ -561,9 +666,10 @@ body {
     color: var(--white);
     transform: translateY(-2px);
     box-shadow: var(--hover-glow);
+    animation: none; /* Stop glowing animation on hover */
 }
 
-/* Apps Section */
+/* Apps Section - LIT ANIMATED CARDS */
 .apps-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -582,13 +688,32 @@ body {
     overflow: hidden;
     opacity: 1; /* Always visible */
     transform: translateY(0); /* Always visible */
+    /* LIT ANIMATIONS */
+    animation: scaleIn 0.6s ease-out;
+}
+
+.app-card:nth-child(1) { animation-delay: 0.1s; }
+.app-card:nth-child(2) { animation-delay: 0.2s; }
+.app-card:nth-child(3) { animation-delay: 0.3s; }
+.app-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) rotate(10deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
 }
 
 .app-card:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-10px) scale(1.02) rotate(2deg);
     box-shadow: var(--hover-glow);
     background: rgba(124, 58, 237, 0.1);
     border: 1px solid rgba(124, 58, 237, 0.3);
+    animation: none; /* Stop initial animation on hover */
 }
 
 .app-icon {
@@ -596,10 +721,16 @@ body {
     color: var(--accent);
     margin-bottom: 1rem;
     transition: transform 0.3s ease;
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
 }
 
 .app-card:hover .app-icon {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(15deg);
     color: var(--secondary);
 }
 
@@ -620,6 +751,13 @@ body {
     color: var(--accent);
     margin-bottom: 1rem;
     text-shadow: var(--glow);
+    animation: pulsePrice 2s infinite;
+}
+
+@keyframes pulsePrice {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 .app-badge {
@@ -634,6 +772,12 @@ body {
     font-weight: 600;
     z-index: 1;
     box-shadow: 0 0 10px rgba(5, 150, 105, 0.5);
+    animation: bounceBadge 1.5s infinite;
+}
+
+@keyframes bounceBadge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
 }
 
 .btn-app {
@@ -641,6 +785,12 @@ body {
     color: var(--dark);
     width: 100%;
     box-shadow: var(--glow);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200px 0; }
+    100% { background-position: 200px 0; }
 }
 
 .btn-app:hover {
@@ -648,9 +798,10 @@ body {
     color: var(--white);
     transform: translateY(-2px);
     box-shadow: var(--hover-glow);
+    animation: none; /* Stop shimmer on hover */
 }
 
-/* Features Section */
+/* Features Section - LIT ANIMATED ITEMS */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -667,13 +818,46 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.05);
     opacity: 1; /* Always visible */
     transform: translateY(0); /* Always visible */
+    /* LIT ANIMATIONS */
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.feature-item:nth-child(odd) {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.feature-item:nth-child(even) {
+    animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px) rotate(-5deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px) rotate(5deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+    }
 }
 
 .feature-item:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-10px) scale(1.02) rotate(1deg);
     box-shadow: var(--hover-glow);
     background: rgba(124, 58, 237, 0.1);
     border: 1px solid rgba(124, 58, 237, 0.3);
+    animation: none; /* Stop initial animation on hover */
 }
 
 .feature-icon {
@@ -681,10 +865,16 @@ body {
     color: var(--accent);
     margin-bottom: 1rem;
     transition: transform 0.3s ease;
+    animation: rotateIcon 6s linear infinite;
+}
+
+@keyframes rotateIcon {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .feature-item:hover .feature-icon {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(360deg);
     color: var(--secondary);
 }
 
@@ -694,7 +884,7 @@ body {
     font-weight: 700;
 }
 
-/* Testimonials */
+/* Testimonials - LIT ANIMATED CARDS */
 .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -710,13 +900,31 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.05);
     opacity: 1; /* Always visible */
     transform: translateY(0); /* Always visible */
+    /* LIT ANIMATIONS */
+    animation: fadeIn 0.8s ease-out;
+}
+
+.testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+.testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+.testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .testimonial-card:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-10px) scale(1.02) rotate(1deg);
     box-shadow: var(--hover-glow);
     background: rgba(124, 58, 237, 0.1);
     border: 1px solid rgba(124, 58, 237, 0.3);
+    animation: none; /* Stop initial animation on hover */
 }
 
 .testimonial-content p {
@@ -901,89 +1109,96 @@ body {
     font-size: 0.9rem;
 }
 
-/* WhatsApp Float */
-.whatsapp-float {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 60px;
-    height: 60px;
-    background: #25D366;
-    color: var(--white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    text-decoration: none;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 30px rgba(37, 211, 102, 0.5);
-    z-index: 1000;
-    animation: float 2s ease-in-out infinite;
-    transition: all 0.3s ease;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1) rotate(15deg);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 40px rgba(37, 211, 102, 0.7);
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
-/* Back to Top Button */
-.back-to-top-btn {
-    position: fixed;
-    bottom: 80px;
-    right: 2rem;
-    width: 50px;
-    height: 50px;
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    z-index: 1000;
-    box-shadow: var(--glow);
-    transition: all 0.3s ease;
-}
-
-.back-to-top-btn:hover {
-    background: var(--secondary);
-    transform: scale(1.1) rotate(180deg);
-    box-shadow: var(--hover-glow);
-}
-
-/* Responsive */
+/* Responsive - FIXED VERSION WITH VISIBLE NAVBAR LINKS */
 @media (max-width: 768px) {
     .hamburger {
-        display: flex;
+        display: flex !important;
+        position: relative;
+        z-index: 1002;
+        width: 30px;
+        height: 21px;
+        padding: 5px;
+        cursor: pointer;
+        /* Ensure visibility */
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .bar {
+        width: 100%;
+        height: 3px;
+        background: #ffffff !important;
+        margin: 3px 0;
+        transition: 0.3s;
+        border-radius: 2px;
+        transform-origin: center;
+        /* Force visibility */
+        visibility: visible !important;
+        opacity: 1 !important;
+        display: block !important;
+        /* Add border to ensure visibility */
+        border: 1px solid rgba(255, 255, 255, 0.5) !important;
     }
     
     .nav-menu {
         position: fixed;
-        left: -100%;
         top: 70px;
-        flex-direction: column;
-        background-color: rgba(15, 23, 42, 0.95);
+        right: -100%;
         width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.2);
-        padding: 2rem 0;
+        background: rgba(15, 23, 42, 0.95);
         backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 2rem 0;
+        z-index: 1001;
+        transition: right 0.3s ease;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.2);
         border: 1px solid rgba(255, 255, 255, 0.05);
     }
     
     .nav-menu.active {
-        left: 0;
+        right: 0;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: 1rem;
+        color: var(--white) !important;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link:hover {
+        background: rgba(124, 58, 237, 0.1);
+        color: var(--accent) !important;
     }
     
     .hero-title {
         font-size: 2.5rem;
+        line-height: 1.3;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .btn {
+        min-width: 200px;
+        padding: 1rem 1.5rem;
+    }
+    
+    .scroll-indicator {
+        display: none;
+    }
+    
+    .section {
+        padding: 3rem 0;
     }
     
     .section-title {
@@ -992,15 +1207,11 @@ body {
     
     .contact-content {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
     
     .footer-content {
         grid-template-columns: 1fr;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
     }
     
     .courses-grid {
@@ -1009,10 +1220,6 @@ body {
     
     .apps-grid {
         grid-template-columns: 1fr;
-    }
-    
-    .scroll-indicator {
-        display: none;
     }
     
     .services-grid,
@@ -1027,6 +1234,151 @@ body {
         max-width: 100%;
         margin: 0 auto;
     }
+    
+    .course-card,
+    .app-card {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .navbar {
+        padding: 0.8rem 0;
+    }
+    
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    .nav-logo h2 {
+        font-size: 1.3rem;
+    }
+    
+    .hero {
+        min-height: 500px;
+        height: auto;
+        padding: 100px 0 50px;
+    }
+    
+    .hero-content {
+        padding: 0 15px;
+    }
+    
+    .btn {
+        min-width: 160px;
+        font-size: 0.9rem;
+    }
+    
+    .section-header {
+        margin-bottom: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+    
+    .service-card,
+    .feature-item,
+    .testimonial-card,
+    .course-card,
+    .app-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .btn {
+        min-width: 140px;
+        padding: 0.8rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .section {
+        padding: 2rem 0;
+    }
+    
+    .service-card,
+    .feature-item,
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+    
+    .course-content {
+        padding: 1rem;
+    }
+    
+    .course-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .nav-link {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    
+    /* FINAL MOBILE HAMBURGER FIX */
+    .hamburger {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .bar {
+        visibility: visible !important;
+        opacity: 1 !important;
+        display: block !important;
+        background: #ffffff !important;
+        border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    }
+}
+
+/* Hamburger Animation */
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Reset animation when not active */
+.hamburger:not(.active) .bar {
+    transform: none;
+}
+
+.hamburger:not(.active) .bar:nth-child(2) {
+    opacity: 1;
 }
 
 /* Animations */
